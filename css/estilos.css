@@ -99,82 +99,100 @@ nav{
     text-decoration: underline;
 }
 
-/* para el modal (login) */
+/* para el popup (login) */
 
-.modal{
+.overlay{
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
-    top: -100vh;
-    left: 0;
-    z-index: 99999999;
-    background: rgba(28, 28, 28, 0.74);
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
-.modal .content-modal{
-    width: 100%;
-    max-width: 500px;
-    position: fixed;
-    left: 50%;
-    top: -100vh;
-    transition: top 0.35s ease;
-    margin-left: -250px;
-    background: white;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    z-index: 99999999;
-}
-
-.modal h2{
-    padding: 0.5em;
-    text-align: center;
-    color: #444444;
-    margin: 0;
-}
-
-.modal article{
-    /* padding-top: 80px; */
-    color: #fff;
-    height: 300px;
-    background: #bc651a;
-    /* background: hsl(194, 86%, 17%); */
-}
-
-.close-modal{
-    color: #000000;
-    position: absolute;
-    top: 0.2em;
-    right: 0.375em;
-    margin: 0;
-    padding: 5px;
-    font-weight: bold;
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
-.modal a:hover{
-    color: #fd1900;
-}
-
-.modal:target{
-    opacity: 1;
     top: 0;
-}
-
-.modal .btn-close-modal{
-    position:absolute;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99999991;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
 }
 
-.modal:target .content-modal{
-    top: 50px;
-    transition: top 0.35s ease;
+.overlay.active{
+    visibility: visible;
 }
+
+.popup{
+    background: #f8f8f8;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    font-family: 'open sans';
+    padding: 20px;
+    text-align: center;
+    width: 600px;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+
+.popup .btn-cerrar-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #BBBBBB;
+    transition: .3s ease all;
+}
+
+.popup .btn-cerrar-popup:hover{
+    color: #000;
+}
+
+.popup h3{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    /* opacity: 0; */
+}
+
+.popup h5{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    /* opacity: 0; */
+}
+
+.popup form .contenedor-inputs input{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #BBBBBB;
+    
+}
+
+.popup form .btn-submit{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    color: #fff;
+    background: #5E7DE3;
+    border-radius: 3px;
+    font-family: 'open sans';
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover{
+    background: rgba(94, 125, 227, .7);
+}
+
+/* animaciones popup */
+
+.popup.active {opacity: 1; transform: scale(1);}
+
+
+
 
 .enlacesDiv > a:hover{
 /*border-bottom: 5px solid hsla(240, 85%, 69%, 0.863);*/
